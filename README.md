@@ -98,12 +98,16 @@ El repositorio incluye el workflow [`.github/workflows/deploy-pages.yml`](.githu
 3. Compila con `base=/Selector-Calculator/`
 4. Publica en GitHub Pages
 
-**Activar GitHub Pages (solo la primera vez):**
+**Activar GitHub Pages (obligatorio la primera vez):**
 
-1. Ir a **Settings → Pages** en el repositorio
-2. En **Build and deployment → Source**, seleccionar **GitHub Actions**
-3. Tras el primer push a `main`, la URL quedará disponible en:
-   `https://benjaauger.github.io/Selector-Calculator/`
+1. Ir a **Settings → Pages** del repositorio
+2. En **Build and deployment → Source**, seleccionar **GitHub Actions** (no Jekyll ni Static HTML)
+3. **Borrar** cualquier dominio personalizado si da error DNS (ej. `selector.calculator.com`)
+4. Ir a **Actions → Deploy GitHub Pages** y pulsar **Re-run all jobs**
+
+Si el deploy falla con error en el job `deploy`, casi siempre es porque el paso 2 no se completó.
+
+**URL del sitio:** `https://benjaauger.github.io/Selector-Calculator/`
 
 ### Cloudflare Pages (alternativa)
 
